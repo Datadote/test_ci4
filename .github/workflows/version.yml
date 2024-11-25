@@ -1,7 +1,12 @@
 name: Find Python Version
 
 on:
-  push
+  push:
+    paths-ignore:
+      - '.github/workflows/*.yml'
+  pull_request:
+    paths-ignore:
+      - '.github/workflows/*.yml'
 
 jobs:
   find-version:
@@ -10,5 +15,8 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - run: python --version
-      - run: npm --version
+      - name: Print versions
+        run: |
+          python --version
+          npm --version
+      # - name: Checkout Code
