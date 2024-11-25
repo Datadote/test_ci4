@@ -30,5 +30,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pylint
+          pip install pandas
+          pip install numpy
       - name: Run Pulint
         run: python -m pylint **/*.py
