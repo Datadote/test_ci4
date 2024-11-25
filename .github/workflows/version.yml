@@ -1,0 +1,14 @@
+name: Find Python Version
+
+on:
+  push
+
+jobs:
+  find-version:
+    name: Version
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - run: python --version
+      - run: npm --version
