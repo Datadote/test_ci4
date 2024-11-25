@@ -11,7 +11,7 @@ on:
 
 jobs:
   find-version:
-    name: Version
+    # name: Version
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
