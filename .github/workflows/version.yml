@@ -41,7 +41,7 @@ jobs:
       - name: Run Pyright
         run: pyright .
       - name: Run Pylint
-        # run: python -m pylint **/*.py
-        run: pylint .
+        run: python -m pylint **/*.py
+        # run: pylint .
       - name: Run Pytest
         run: pytest
