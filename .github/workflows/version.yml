@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 5
 
     steps:
+      # - pyright vs mypy, isort, flake8 or pylint. ruff with precommit
+      # 1) Order of CI operations, test(pytest), autoformat (ruff), lint (flake8 or pylint or ruff)
       - name: Print versions
         run: |
           python --version
@@ -29,8 +31,17 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pylint
           pip install pandas
           pip install numpy
-      - name: Run Pulint
-        run: python -m pylint **/*.py
+          pip install black isort pyright pylint pytest
+      - name: Run Black
+        run: black . --check
+      - name: Run isort
+        run: isort . --check
+      - name: Run Pyright
+        run: pyright .
+      - name: Run Pylint
+        # run: python -m pylint **/*.py
+        run: pylint .
+      - name: Run Pytest
+        run: pytest
