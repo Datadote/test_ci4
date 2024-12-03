@@ -29,6 +29,7 @@ jobs:
       - name: Run Black
         run: black .
       - name: Run Ruff - Autoformatting
-        run: ruff . --config ruff.yml --fix
+        run: ruff .
+        #  --config ruff.yml --fix
       - name: Run Pytest
         run: pytest
