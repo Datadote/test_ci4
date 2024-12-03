@@ -1,7 +1,6 @@
 """ Module provides 1 + 1 """
 import numpy as np
 import pandas as pd
-import os
 
 def main():
     """Returns 1 + 1."""
