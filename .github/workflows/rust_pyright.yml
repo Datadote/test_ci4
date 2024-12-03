@@ -25,11 +25,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install black ruff pyright
+          pip install black ruff pyright pytest
       - name: Run Black
         run: black .
       - name: Run Ruff - Autoformatting
-        run: ruff check .
-        #  --config ruff.yml --fix
+        run: ruff check . --config ruff.yml --fix
       - name: Run Pytest
         run: pytest
