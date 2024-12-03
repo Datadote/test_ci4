@@ -32,3 +32,12 @@ jobs:
         run: ruff check . --config ruff.yml --fix
       - name: Run Pytest
         run: pytest
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Apply formatting fixes"
+          git push
+        if: success()
