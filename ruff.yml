@@ -1,16 +1,13 @@
-select = ["E", "F", "W", "I"]
 # E: Pycodestyle errors (PEP 8 compliance).
 # F: Pyflakes checks (e.g., unused imports, undefined variables).
 # W: Warnings about code that could lead to bugs or poor readability.
 # I: Import sorting checks (e.g., using isort style).
-
+select = ["E", "F", "W", "I"]
 exclude = [
   ".venv",
   "__pycache__",
   "build",
   "dist",
 ]
-
 line-length = 88
-
 fixable = ["E", "F", "W", "I"]
